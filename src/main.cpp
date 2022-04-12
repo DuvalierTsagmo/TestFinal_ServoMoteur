@@ -12,6 +12,7 @@
 #include "WIFI_NINA_Connector.h"
 #include "MQTTConnector.h"
 
+// Declaration des variables
 Servo moteur1;
 int Angle = 0;
 const int PIN_SERVO = 9;
@@ -34,7 +35,6 @@ void setup()
 
 void loop()
 {
-    // put your main code here, to run repeatedly:
     moteur1.write(Angle);
 }
 
@@ -42,10 +42,6 @@ void receiveEvent(int byte)
 {
     boutton = Wire.read(); // read one character from the I2C
 
-    Serial.print("\nValeur obtenue est : ");
-    Serial.println(boutton);
-    Serial.print("Angle : ");
-    Serial.println(Angle);
     switch (boutton)
     {
     case 'A':
