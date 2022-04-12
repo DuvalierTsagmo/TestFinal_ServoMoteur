@@ -6,7 +6,7 @@
   Version    : 0.0.1
 */
 
-//librairies
+// librairies
 #include <Arduino.h>
 #include <Servo.h>
 #include <Wire.h>
@@ -39,7 +39,7 @@ void loop()
     moteur1.write(Angle);
 }
 
-//prototype qui permet la rotation des angles du servo moteur
+// prototype qui permet la rotation des angles du servo moteur
 void receiveEvent(int byte)
 {
     boutton = Wire.read(); // read one character from the I2C
@@ -68,7 +68,7 @@ void receiveEvent(int byte)
     default:
         break;
     }
-    //envoit des donnees sur T.B
+    // envoit des donnees sur T.B
     appendPayload("Angle", Angle);
     sendPayload();
 }
